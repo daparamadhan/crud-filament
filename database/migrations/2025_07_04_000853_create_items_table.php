@@ -13,7 +13,7 @@ return new class extends Migration
 {
     Schema::create('items', function (Blueprint $table) {
         $table->id();
-        $table->string('kode_barang')->unique();
+        $table->string('nomor_resi')->unique();
         $table->string('nama_barang');
         $table->float('berat');
         $table->enum('status', ['masuk', 'keluar', 'gudang'])->default('gudang');
