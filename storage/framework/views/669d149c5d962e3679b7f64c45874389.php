@@ -61,20 +61,20 @@
     <p class="text-[#637f88] max-w-xl mx-auto text-sm">From domestic deliveries to worldwide shipping, we ensure your packages reach their destinations swiftly and safely.</p>
   </div>
   <div class="grid sm:grid-cols-3 gap-8 max-w-5xl mx-auto">
-    @foreach($services as $service)
+    <?php $__currentLoopData = $services; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $service): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
     <div class="p-6 bg-white rounded-xl border hover:shadow-lg transition space-y-4 flex flex-col items-center text-center">
       <div class="text-4xl">
-        @if(str_contains($service->nama_service, 'Standard')) 📦
-        @elseif(str_contains($service->nama_service, 'International')) ✈️
-        @else 🚀
-        @endif
+        <?php if(str_contains($service->nama_service, 'Standard')): ?> 📦
+        <?php elseif(str_contains($service->nama_service, 'International')): ?> ✈️
+        <?php else: ?> 🚀
+        <?php endif; ?>
       </div>
-      <h4 class="font-bold text-[#47c1ea] text-lg">{{ $service->nama_service }}</h4>
-      <p class="text-sm text-[#637f88]">{{ $service->deskripsi }}</p>
-      <span class="text-sm font-semibold text-gray-600">Rp{{ number_format($service->harga, 0, ',', '.') }}</span>
+      <h4 class="font-bold text-[#47c1ea] text-lg"><?php echo e($service->nama_service); ?></h4>
+      <p class="text-sm text-[#637f88]"><?php echo e($service->deskripsi); ?></p>
+      <span class="text-sm font-semibold text-gray-600">Rp<?php echo e(number_format($service->harga, 0, ',', '.')); ?></span>
       <a href="#" class="mt-auto inline-block text-sm font-semibold text-[#47c1ea] hover:underline">Learn More →</a>
     </div>
-    @endforeach
+    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
   </div>
 </section>
 
@@ -103,3 +103,4 @@
 
 </body>
 </html>
+<?php /**PATH G:\crud-filament\crud-filament\resources\views/services.blade.php ENDPATH**/ ?>

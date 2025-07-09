@@ -12,7 +12,7 @@ class CreateShipment extends CreateRecord
 
     protected function afterCreate(): void
     {
-        $items = $this->record->items()->pluck('item.id');
+        $items = $this->record->items()->pluck('items.id');
         Item::whereIn('id', $items)->update(['status' => 'keluar']);
     }
 }
