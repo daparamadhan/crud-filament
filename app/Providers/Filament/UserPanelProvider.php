@@ -26,6 +26,7 @@ class UserPanelProvider extends PanelProvider
             ->id('user')
             ->path('user')
             ->login()
+            ->homeUrl(fn () => route('filament.user.resources.services.index')) 
             ->colors([
                 'primary' => Color::Amber,
             ])

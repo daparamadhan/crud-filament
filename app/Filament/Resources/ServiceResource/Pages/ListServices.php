@@ -16,4 +16,9 @@ class ListServices extends ListRecords
             Actions\CreateAction::make(),
         ];
     }
+
+    protected function getBulkActions(): array
+    {
+        return parent::getBulkActions();
+    }
 }

@@ -13,6 +13,7 @@ return new class extends Migration
             $table->string('nama_service');
             $table->text('deskripsi')->nullable();
             $table->decimal('harga', 10, 2);
+            $table->string('image_path')->nullable(); // Kolom untuk menyimpan path gambar/icon
             $table->timestamps();
         });
     }

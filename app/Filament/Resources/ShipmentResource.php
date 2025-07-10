@@ -4,7 +4,6 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\ShipmentResource\Pages;
 use App\Models\Shipment;
-use App\Models\Item;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -13,8 +12,11 @@ use Filament\Tables\Table;
 use Filament\Forms\Components\Card;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Select;
-use Filament\Forms\Components\MultiSelect;
+use Filament\Forms\Components\Toggle;
+use Filament\Forms\Components\Grid;
+use Filament\Forms\Components\DateTimePicker;
 use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Columns\IconColumn;
 
 class ShipmentResource extends Resource
 {
@@ -25,62 +27,95 @@ class ShipmentResource extends Resource
     protected static ?string $navigationLabel = 'Data Pengiriman';
 
     public static function form(Form $form): Form
-{
-    return $form
-        ->schema([
-            Card::make()
-                ->schema([
-                    TextInput::make('kode_pengiriman')
-                        ->label('Kode Pengiriman')
-                        ->disabled()
-                        ->dehydrated(), // pastikan tetap dikirim ke DB walau disabled
-                    TextInput::make('asal')
-                        ->label('Asal')
-                        ->required(),
-                    TextInput::make('tujuan')
-                        ->label('Tujuan')
-                        ->required(),
-                    TextInput::make('ongkir')
-                        ->label('Ongkir')
-                        ->numeric()
-                        ->required(),
-                    Select::make('status')
-                        ->label('Status')
+    {
+        return $form
+            ->schema([
+                Card::make()->schema([
+
+                    Grid::make(2)->schema([
+                        TextInput::make('kode_pengiriman')
+                            ->label('Kode Pengiriman')
+                            ->disabled()
+                            ->dehydrated(false)
+                            ->default(fn () => 'TRK' . strtoupper(uniqid())),
+
+                        DateTimePicker::make('pickup_time')
+                            ->label('Waktu Penjemputan')
+                            ->nullable(),
+
+                        DateTimePicker::make('estimated_arrival')
+                            ->label('Estimasi Tiba')
+                            ->nullable(),
+                    ]),
+
+                    Grid::make(2)->schema([
+                        TextInput::make('sender_name')->label('Nama Pengirim')->required(),
+                        TextInput::make('sender_phone')->label('Telepon Pengirim')->required(),
+                        TextInput::make('receiver_name')->label('Nama Penerima')->required(),
+                        TextInput::make('receiver_phone')->label('Telepon Penerima')->required(),
+                    ]),
+
+                    Select::make('package_size')
+                        ->label('Ukuran Paket')
                         ->options([
-                            'proses' => 'Proses',
-                            'dikirim' => 'Dikirim',
-                            'selesai' => 'Selesai',
+                            'small' => 'Small (20×20×8 cm)',
+                            'medium' => 'Medium (30×20×12 cm)',
+                            'large' => 'Large (35×30×25 cm)',
+                            'custom' => 'Custom (Max 50×50×50 cm)',
                         ])
                         ->required(),
-                    MultiSelect::make('items')
-                        ->label('Barang yang Dikirim')
-                        ->relationship('items', 'nama_barang')
+
+                    Grid::make(3)->schema([
+                        TextInput::make('custom_length')->label('Panjang (cm)')->numeric()->nullable(),
+                        TextInput::make('custom_width')->label('Lebar (cm)')->numeric()->nullable(),
+                        TextInput::make('custom_height')->label('Tinggi (cm)')->numeric()->nullable(),
+                    ]),
+
+                    Select::make('item_type')
+                        ->label('Jenis Barang')
+                        ->options([
+                            'dokumen' => 'Dokumen',
+                            'elektronik' => 'Elektronik',
+                            'pakaian' => 'Pakaian',
+                            'sepatu' => 'Sepatu',
+                            'makanan_kering' => 'Makanan Kering',
+                            'makanan_basah' => 'Makanan Basah',
+                            'ikan_hias' => 'Ikan Hias',
+                            'tanaman' => 'Tanaman',
+                            'kosmetik' => 'Kosmetik / Skincare',
+                            'obat' => 'Obat-obatan',
+                            'aksesoris' => 'Aksesoris',
+                            'peralatan_rumah' => 'Peralatan Rumah Tangga',
+                            'lainnya' => 'Lainnya',
+                        ])
                         ->required(),
+
+                    Toggle::make('fragile')->label('Fragile'),
+                    Toggle::make('insurance')->label('Asuransi Tambahan'),
+
+                    TextInput::make('extra_packaging_name')->label('Nama Extra Packaging')->nullable(),
+                    TextInput::make('extra_packaging_price')->label('Harga Extra Packaging')->numeric()->minValue(1)->nullable(),
                 ])
-                ->columns(2),
-        ]);
-}
+            ]);
+    }
 
     public static function table(Table $table): Table
     {
         return $table
             ->columns([
-                TextColumn::make('kode_pengiriman')->sortable()->searchable(),
-                TextColumn::make('asal')->sortable(),
-                TextColumn::make('tujuan')->sortable(),
-                TextColumn::make('ongkir')->sortable(),
-                TextColumn::make('status')
-                    ->badge()
-                    ->colors([
-                        'warning' => 'proses',
-                        'info' => 'dikirim',
-                        'success' => 'selesai',
-                    ])
-                    ->sortable(),
+                TextColumn::make('kode_pengiriman')->label('No Resi')->searchable(),
+                TextColumn::make('sender_name')->label('Pengirim')->searchable(),
+                TextColumn::make('receiver_name')->label('Penerima')->searchable(),
+                TextColumn::make('pickup_time')->label('Pickup')->dateTime(),
+                TextColumn::make('estimated_arrival')->label('Tiba')->dateTime(),
+                TextColumn::make('package_size')->label('Ukuran'),
+                TextColumn::make('item_type')->label('Jenis Barang'),
+                IconColumn::make('fragile')->label('Fragile')->boolean(),
+                IconColumn::make('insurance')->label('Asuransi')->boolean(),
+                TextColumn::make('extra_packaging_name')->label('Extra Packaging'),
+                TextColumn::make('extra_packaging_price')->label('Harga Packaging')->money('IDR'),
             ])
-            ->filters([
-                //
-            ])
+            ->filters([])
             ->actions([
                 Tables\Actions\EditAction::make(),
                 Tables\Actions\DeleteAction::make(),

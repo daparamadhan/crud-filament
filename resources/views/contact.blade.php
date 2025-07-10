@@ -28,9 +28,9 @@
     <a class="text-sm font-medium hover:text-[#47c1ea]" href="/contact">Contact</a>
   </nav>
   <div class="flex gap-2">
-    <a href="/track" 
+    <a href="/shipment" 
        class="h-10 px-4 rounded-xl bg-[#47c1ea] text-white text-sm font-bold tracking-wide flex items-center justify-center hover:bg-[#3bb2d5] transition">
-      Track Package
+      Send Now
     </a>
 
     <a href="/login" 

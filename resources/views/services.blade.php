@@ -28,9 +28,9 @@
     <a class="text-sm font-medium hover:text-[#47c1ea]" href="/contact">Contact</a>
   </nav>
   <div class="flex gap-2">
-    <a href="/track" 
+    <a href="/shipment" 
        class="h-10 px-4 rounded-xl bg-[#47c1ea] text-white text-sm font-bold tracking-wide flex items-center justify-center hover:bg-[#3bb2d5] transition">
-      Track Package
+      Send Now
     </a>
 
     <a href="/login" 
@@ -47,7 +47,7 @@
     <h1 class="text-4xl font-black text-white tracking-tight">Your Trusted Shipping Partner</h1>
     <p class="text-white text-base">Secure delivery from Bandung to anywhere in the world.</p>
     <div class="flex w-full max-w-md mx-auto rounded-xl overflow-hidden">
-      <a href="/login" role="button" class="w-full h-12 px-4 flex items-center justify-center bg-[#47c1ea] text-white font-bold text-sm tracking-wide hover:bg-[#3bb2d5] transition rounded-xl">
+      <a href="/services" role="button" class="w-full h-12 px-4 flex items-center justify-center bg-[#47c1ea] text-white font-bold text-sm tracking-wide hover:bg-[#3bb2d5] transition rounded-xl">
         Explore Services
       </a>
     </div>
@@ -58,21 +58,37 @@
 <section class="bg-gray-50 px-10 py-16">
   <div class="max-w-5xl mx-auto text-center mb-12">
     <h2 class="text-3xl font-bold mb-4">Our Services</h2>
-    <p class="text-[#637f88] max-w-xl mx-auto text-sm">From domestic deliveries to worldwide shipping, we ensure your packages reach their destinations swiftly and safely.</p>
+    <p class="text-[#637f88] max-w-xl mx-auto text-sm">
+      From domestic deliveries to worldwide shipping, we ensure your packages reach their destinations swiftly and safely.
+    </p>
   </div>
+
   <div class="grid sm:grid-cols-3 gap-8 max-w-5xl mx-auto">
     @foreach($services as $service)
-    <div class="p-6 bg-white rounded-xl border hover:shadow-lg transition space-y-4 flex flex-col items-center text-center">
-      <div class="text-4xl">
-        @if(str_contains($service->nama_service, 'Standard')) 📦
-        @elseif(str_contains($service->nama_service, 'International')) ✈️
-        @else 🚀
+    <div class="p-6 bg-white rounded-xl border transition-all duration-300 hover:border-[#47c1ea] hover:shadow-md space-y-4 flex flex-col items-center text-center">
+      
+      {{-- Service Image / Icon --}}
+      <div class="w-20 h-20 md:w-28 md:h-28">
+        @if($service->image_path)
+          <img src="{{ asset('storage/' . $service->image_path) }}" alt="{{ $service->nama_service }}" class="w-full h-full object-contain mx-auto">
+        @elseif(str_contains($service->nama_service, 'Standard'))
+          <img src="/icons/truck.svg" alt="Standard Shipping" class="w-full h-full object-contain mx-auto">
+        @elseif(str_contains($service->nama_service, 'International'))
+          <img src="/icons/world.svg" alt="International Shipping" class="w-full h-full object-contain mx-auto">
+        @else
+          <img src="/icons/flash.svg" alt="Express Delivery" class="w-full h-full object-contain mx-auto">
         @endif
       </div>
+
+      {{-- Service Info --}}
       <h4 class="font-bold text-[#47c1ea] text-lg">{{ $service->nama_service }}</h4>
       <p class="text-sm text-[#637f88]">{{ $service->deskripsi }}</p>
-      <span class="text-sm font-semibold text-gray-600">Rp{{ number_format($service->harga, 0, ',', '.') }}</span>
-      <a href="#" class="mt-auto inline-block text-sm font-semibold text-[#47c1ea] hover:underline">Learn More →</a>
+      <span class="text-sm font-semibold text-gray-600">
+        Rp{{ number_format($service->harga, 0, ',', '.') }}
+      </span>
+      <a href="#" class="mt-auto inline-block text-sm font-semibold text-[#47c1ea] hover:underline">
+        Learn More
+      </a>
     </div>
     @endforeach
   </div>
@@ -82,7 +98,7 @@
 <section class="py-12 px-10 max-w-3xl mx-auto text-center">
   <h3 class="text-xl font-bold mb-4">Ready to ship with us?</h3>
   <p class="text-sm text-[#637f88] mb-6">Experience hassle-free delivery and real-time tracking for all your shipments.</p>
-  <a href="/login" class="inline-block bg-[#47c1ea] text-white font-bold px-6 py-3 rounded-xl hover:bg-[#3bb2d5] transition">
+  <a href="/shipment" class="inline-block bg-[#47c1ea] text-white font-bold px-6 py-3 rounded-xl hover:bg-[#3bb2d5] transition">
     Get Started
   </a>
 </section>

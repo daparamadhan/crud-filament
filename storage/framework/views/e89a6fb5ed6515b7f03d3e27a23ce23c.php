@@ -28,9 +28,9 @@
     <a class="text-sm font-medium hover:text-[#47c1ea]" href="/contact">Contact</a>
   </nav>
   <div class="flex gap-2">
-    <a href="/" 
+    <a href="/shipment" 
        class="h-10 px-4 rounded-xl bg-[#47c1ea] text-white text-sm font-bold tracking-wide flex items-center justify-center hover:bg-[#3bb2d5] transition">
-      Track Package
+      Send Now
     </a>
 
     <a href="/login" 
@@ -40,19 +40,12 @@
   </div>
 </header>
 
-<section class="py-12 px-6">
-  <div class="max-w-xl mx-auto text-center">
-    <h2 class="text-2xl font-bold mb-4">Track Your Package</h2>
-    <form id="trackForm" class="flex gap-2 justify-center">
-      <input type="text" id="trackingNumber" name="trackingNumber"
-        class="w-full sm:w-auto flex-1 rounded-md border-gray-300 focus:ring-[#47c1ea] focus:border-[#47c1ea] px-4 py-2"
-        placeholder="Enter Tracking Number" required>
-      <button type="submit"
-        class="bg-[#47c1ea] text-white font-bold px-6 py-2 rounded-xl hover:bg-[#3bb2d5] transition">
-        Track
-      </button>
-    </form>
-    <div id="trackingResult" class="mt-6 text-left max-w-md mx-auto text-sm text-[#637f88]"></div>
+<!-- Hero -->
+<section class="flex items-center justify-center py-16 px-4 bg-cover bg-center"
+  style="background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1588269842570-7c74bc08f0b4?fit=crop&w=1600&q=80');">
+  <div class="text-center max-w-xl space-y-4">
+    <h1 class="text-4xl font-black text-white tracking-tight">Your Trusted Shipping Partner</h1>
+    <p class="text-white text-base">Secure delivery from Bandung to anywhere in the world.</p>
   </div>
 </section>
 
@@ -184,4 +177,4 @@
   document.querySelector('form').addEventListener('submit', function(e) {
     e.preventDefault();
     alert('Thank you for contacting us!');
-  });
+  });<?php /**PATH G:\crud-filament\crud-filament\resources\views/contact.blade.php ENDPATH**/ ?>

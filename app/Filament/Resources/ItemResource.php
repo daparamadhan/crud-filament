@@ -28,8 +28,8 @@ class ItemResource extends Resource
             ->schema([
                 Card::make()
                     ->schema([
-                        TextInput::make('nomor_resi')
-                        ->label('Nomor Resi')
+                        TextInput::make('kode_barang')
+                        ->label('Kode Barang')
                         ->disabled()
                         ->helperText('Diisi otomatis'),
                         TextInput::make('nama_barang')
@@ -56,7 +56,7 @@ class ItemResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make('nomor_resi')->sortable()->searchable(),
+                TextColumn::make('kode_barang')->sortable()->searchable(),
                 TextColumn::make('nama_barang')->sortable()->searchable(),
                 TextColumn::make('berat')->label('Berat (kg)')->sortable(),
                 TextColumn::make('status')

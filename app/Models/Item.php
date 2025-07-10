@@ -9,7 +9,7 @@ class Item extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['nomor_resi', 'nama_barang', 'berat', 'status'];
+    protected $fillable = ['kode_barang', 'nama_barang', 'berat', 'status'];
 
     protected static function booted()
     {

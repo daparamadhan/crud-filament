@@ -28,9 +28,9 @@
     <a class="text-sm font-medium hover:text-[#47c1ea]" href="/contact">Contact</a>
   </nav>
   <div class="flex gap-2">
-    <a href="/track" 
+    <a href="/shipment" 
        class="h-10 px-4 rounded-xl bg-[#47c1ea] text-white text-sm font-bold tracking-wide flex items-center justify-center hover:bg-[#3bb2d5] transition">
-      Track Package
+      Send Now
     </a>
 
     <a href="/login" 
@@ -60,63 +60,83 @@
 </section>
 
 <!-- Why Choose Us -->
-<section class="px-10 py-12 max-w-4xl mx-auto space-y-8">
-  <div>
-    <h2 class="text-3xl font-bold mb-2">Why Choose Swa Buana?</h2>
-    <p>We go beyond just delivering packages — we deliver trust and peace of mind.</p>
-  </div>
-  <div class="grid sm:grid-cols-3 gap-6">
-    <div class="p-4 border rounded-lg space-y-2 hover:border-[#47c1ea] transition">
-      <h3 class="font-bold text-[#47c1ea]">Safe Handling</h3>
-      <p class="text-sm text-[#637f88]">Every item is carefully managed to reach its destination intact.</p>
-    </div>
-    <div class="p-4 border rounded-lg space-y-2 hover:border-[#47c1ea] transition">
-      <h3 class="font-bold text-[#47c1ea]">Affordable Rates</h3>
-      <p class="text-sm text-[#637f88]">Competitive prices without compromising service quality.</p>
-    </div>
-    <div class="p-4 border rounded-lg space-y-2 hover:border-[#47c1ea] transition">
-      <h3 class="font-bold text-[#47c1ea]">Dedicated Support</h3>
-      <p class="text-sm text-[#637f88]">Friendly team ready to assist your shipping needs.</p>
-    </div>
+<section class="px-10 py-12 max-w-4xl mx-auto">
+  <div class="p-6 bg-white border rounded-xl shadow-md">
+    <h2 class="text-3xl font-bold text-[#47c1ea] mb-4">Swa Buana Delivery Service</h2>
+    <p class="text-gray-700 mb-6">
+      At Swa Buana, we ensure your goods are delivered safely, affordably, and with a personal touch. Experience delivery that’s fast, secure, and supported by our dedicated team.
+    </p>
+    <a href="#delivery-process" class="inline-block bg-[#47c1ea] hover:bg-[#3ba8cd] text-white font-semibold px-5 py-2 rounded-lg transition">
+      Discover Our Delivery Process
+    </a>
   </div>
 </section>
 
 <!-- Our Services -->
-<section class="px-10 py-12 max-w-4xl mx-auto">
-  <h2 class="text-2xl font-bold mb-6">Our Services</h2>
-  <div class="grid sm:grid-cols-3 gap-6">
-    <div class="p-4 border rounded-lg hover:border-[#47c1ea] transition space-y-2">
-      <h4 class="font-bold text-[#47c1ea]">📦 Standard Shipping</h4>
-      <p class="text-sm text-[#637f88]">Reliable delivery within Indonesia at the best value.</p>
+<section class="px-10 py-12 max-w-6xl mx-auto">
+  <div class="mb-10">
+    <h2 class="text-3xl font-bold text-[#47c1ea] mb-2">Our Services</h2>
+    <p class="text-gray-700">We continually expand our services to better meet your needs.</p>
+  </div>
+
+  <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+    <div class="p-6 bg-white border rounded-xl shadow-sm hover:border-[#47c1ea] transition">
+      <h4 class="text-lg font-semibold text-[#47c1ea] mb-1">Standard Shipping</h4>
+      <p class="text-sm text-gray-600">Ship and receive packages on the same day, both locally and intercity.</p>
     </div>
-    <div class="p-4 border rounded-lg hover:border-[#47c1ea] transition space-y-2">
-      <h4 class="font-bold text-[#47c1ea]">✈️ International Shipping</h4>
-      <p class="text-sm text-[#637f88]">Send your packages worldwide with complete customs handling.</p>
+    <div class="p-6 bg-white border rounded-xl shadow-sm hover:border-[#47c1ea] transition">
+      <h4 class="text-lg font-semibold text-[#47c1ea] mb-1">International Shipping</h4>
+      <p class="text-sm text-gray-600">Smart locker system for storing or dropping off your shipments easily.</p>
     </div>
-    <div class="p-4 border rounded-lg hover:border-[#47c1ea] transition space-y-2">
-      <h4 class="font-bold text-[#47c1ea]">🚀 Express Delivery</h4>
-      <p class="text-sm text-[#637f88]">For urgent needs, we guarantee the fastest route possible.</p>
+    <div class="p-6 bg-white border rounded-xl shadow-sm hover:border-[#47c1ea] transition">
+      <h4 class="text-lg font-semibold text-[#47c1ea] mb-1">Express Delivery</h4>
+      <p class="text-sm text-gray-600">Order various local products straight from our app — no need to leave home.</p>
     </div>
+    <div class="p-6 bg-white border rounded-xl shadow-sm hover:border-[#47c1ea] transition">
+      <h4 class="text-lg font-semibold text-[#47c1ea] mb-1">SwaBig</h4>
+      <p class="text-sm text-gray-600">Send items up to 25kg and dimensions up to 50x50x80 cm with ease.</p>
+    </div>
+    <div class="p-6 bg-white border rounded-xl shadow-sm hover:border-[#47c1ea] transition">
+      <h4 class="text-lg font-semibold text-[#47c1ea] mb-1">Business Delivery</h4>
+      <p class="text-sm text-gray-600">Tailored shipping solutions for your growing business operations.</p>
+    </div>
+    <div class="p-6 bg-white border rounded-xl shadow-sm hover:border-[#47c1ea] transition">
+      <h4 class="text-lg font-semibold text-[#47c1ea] mb-1">Custom Logistics</h4>
+      <p class="text-sm text-gray-600">Need something special? Our team is ready to design a custom solution.</p>
+    </div>
+  </div>
+
+  <div class="mt-8">
+    <a href="#more-services" class="inline-flex items-center gap-2 bg-[#47c1ea] hover:bg-[#3ba8cd] text-white font-semibold px-5 py-2 rounded-lg transition">
+      Learn More →
+    </a>
   </div>
 </section>
 
-<!-- Testimonials -->
-<section class="px-10 py-12 max-w-4xl mx-auto">
-  <h2 class="text-2xl font-bold mb-6">What Our Clients Say</h2>
-  <div class="space-y-6">
-    <div class="p-4 border rounded-lg hover:border-[#47c1ea] transition">
-      <p class="font-medium">Citra Mulyani <span class="text-[#637f88] text-sm">(June 10, 2025)</span></p>
-      <p class="text-sm mt-2">"Swa Buana made my move to Singapore hassle-free. All items arrived perfectly!"</p>
+<!-- Promo Carousel -->
+<section class="px-4 py-12 max-w-6xl mx-auto">
+    <h2 class="text-3xl font-bold text-[#47c1ea] mb-6">Our Promos</h2>
+
+    <div class="flex gap-6 overflow-x-auto pb-4 scroll-smooth snap-x">
+        @foreach ($promos as $promo)
+            <div class="flex-none w-96 bg-[#e8f8ff] border border-blue-200 rounded-xl shadow-sm overflow-hidden snap-start 
+                        active:scale-95 active:shadow-inner transition duration-200 ease-in-out">
+                
+                <img src="{{ asset('storage/' . $promo->image_path) }}" 
+                     alt="{{ $promo->title }}" 
+                     class="w-full h-36 object-cover transition duration-200 ease-in-out active:brightness-90">
+
+                <div class="p-4">
+                    <h3 class="text-xl font-semibold text-[#47c1ea] mb-2">{{ $promo->title }}</h3>
+                    <p class="text-sm text-gray-700">
+                        {{ $promo->description }}
+                    </p>
+                    <p class="text-xs text-gray-500 mt-2">*Terms apply</p>
+                    <p class="text-xs text-[#6a9db2] mt-1">{{ $promo->hashtags }}</p>
+                </div>
+            </div>
+        @endforeach
     </div>
-    <div class="p-4 border rounded-lg hover:border-[#47c1ea] transition">
-      <p class="font-medium">Rendy Pratama <span class="text-[#637f88] text-sm">(May 28, 2025)</span></p>
-      <p class="text-sm mt-2">"Highly professional service. The team updated me regularly until my parcel was received."</p>
-    </div>
-    <div class="p-4 border rounded-lg hover:border-[#47c1ea] transition">
-      <p class="font-medium">Farah Syifa <span class="text-[#637f88] text-sm">(May 5, 2025)</span></p>
-      <p class="text-sm mt-2">"Fast delivery and excellent customer support. Will definitely use Swa Buana again."</p>
-    </div>
-  </div>
 </section>
 
 <!-- Footer -->

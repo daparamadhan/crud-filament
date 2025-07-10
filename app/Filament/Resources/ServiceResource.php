@@ -18,47 +18,82 @@ class ServiceResource extends Resource
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
     public static function form(Form $form): Form
-{
-    return $form
-        ->schema([
-            Forms\Components\Select::make('nama_service')
-                ->label('Nama Layanan')
-                ->required()
-                ->options([
-                    'Standard Shipping' => 'Standard Shipping',
-                    'International Shipping' => 'International Shipping',
-                    'Express Delivery' => 'Express Delivery',
-                ])
-                ->live()
-                ->afterStateUpdated(function (callable $set, $state) {
-                    if ($state === 'Standard Shipping') {
-                        $set('harga', 20000);
-                    } elseif ($state === 'International Shipping') {
-                        $set('harga', 80000);
-                    } elseif ($state === 'Express Delivery') {
-                        $set('harga', 50000);
-                    }
-                }),
+    {
+        return $form
+            ->schema([
+                Forms\Components\Select::make('nama_service')
+                    ->label('Nama Layanan')
+                    ->required()
+                    ->options([
+                        'Standard Shipping' => 'Standard Shipping',
+                        'International Shipping' => 'International Shipping',
+                        'Express Delivery' => 'Express Delivery',
+                    ])
+                    ->live()
+                    ->afterStateUpdated(function (callable $set, $state) {
+                        if ($state === 'Standard Shipping') {
+                            $set('harga', 20000);
+                        } elseif ($state === 'International Shipping') {
+                            $set('harga', 80000);
+                        } elseif ($state === 'Express Delivery') {
+                            $set('harga', 50000);
+                        }
+                    }),
 
-            Forms\Components\Textarea::make('deskripsi')
-                ->label('Deskripsi'),
+                Forms\Components\Textarea::make('deskripsi')
+                    ->label('Deskripsi'),
 
-            Forms\Components\TextInput::make('harga')
-                ->label('Harga')
-                ->numeric()
-                ->required()
-                ->reactive(),
-        ]);
-}
+                Forms\Components\TextInput::make('harga')
+                    ->label('Harga')
+                    ->numeric()
+                    ->required()
+                    ->reactive(),
+
+                Forms\Components\FileUpload::make('image_path')
+                    ->label('Gambar/Ikon')
+                    ->image()
+                    ->disk('public')
+                    ->directory('services')
+                    ->nullable()
+                    ->previewable(true)
+                    ->imagePreviewHeight('150')
+                    ->loadingIndicatorPosition('left')
+                    ->uploadProgressIndicatorPosition('right')
+                    ->columnSpanFull(),
+            ]);
+    }
 
     public static function table(Table $table): Table
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('nama_service')->label('Nama Layanan')->searchable()->sortable(),
-                Tables\Columns\TextColumn::make('deskripsi')->limit(30)->label('Deskripsi'),
-                Tables\Columns\TextColumn::make('harga')->label('Harga')->money('IDR'),
-                Tables\Columns\TextColumn::make('created_at')->label('Dibuat')->dateTime(),
+                Tables\Columns\ImageColumn::make('image_path')
+                    ->label('Gambar')
+                    ->disk('public')
+                    ->getStateUsing(fn ($record) =>
+                        $record->image_path
+                            ? 'services/' . $record->image_path
+                            : 'icons/flash.svg'
+                    )
+                    ->height(50)
+                    ->circular(),
+
+                Tables\Columns\TextColumn::make('nama_service')
+                    ->label('Nama Layanan')
+                    ->searchable()
+                    ->sortable(),
+
+                Tables\Columns\TextColumn::make('deskripsi')
+                    ->limit(30)
+                    ->label('Deskripsi'),
+
+                Tables\Columns\TextColumn::make('harga')
+                    ->label('Harga')
+                    ->money('IDR'),
+
+                Tables\Columns\TextColumn::make('created_at')
+                    ->label('Dibuat')
+                    ->dateTime(),
             ])
             ->filters([])
             ->actions([
