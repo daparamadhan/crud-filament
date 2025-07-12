@@ -174,7 +174,45 @@
 </body>
 </html>
 <script>
-  document.querySelector('form').addEventListener('submit', function(e) {
-    e.preventDefault();
-    alert('Thank you for contacting us!');
+  document.querySelector('form').addEventListener('submit', async function(e) {
+    e.preventDefault(); // Mencegah pengiriman formulir standar
+
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
+
+    try {
+      const response = await fetch('/api/contact', { // URL API Anda
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+          },
+        body: JSON.stringify({ name, email, message }) // Kirim data sebagai JSON
+        });
+
+        const result = await response.json(); // Parse respons sebagai JSON
+
+        if (response.ok) { // Jika status HTTP 2xx (sukses)
+          alert(result.message);
+          e.target.reset(); // Reset formulir
+        } else { // Jika status HTTP bukan 2xx (error dari server)
+        let errorMessage = 'An error occurred. Please try again later.';
+          if (result.message) {
+            errorMessage = result.message;
+          }
+          if (result.errors) { // Menampilkan error validasi jika ada
+            for (const key in result.errors) {
+              if (result.errors.hasOwnProperty(key)) {
+                errorMessage += `\n- ${key}: ${result.errors[key].join(', ')}`;
+                }
+              }
+            }
+            alert('Error: ' + errorMessage);
+          }
+      } catch (error) { // Menangkap error jaringan atau error tak terduga
+        console.error('Network error or unexpected error:', error);
+        alert('Could not connect to the server. Please check your internet connection and try again.');
+      }
   });
+</script>
