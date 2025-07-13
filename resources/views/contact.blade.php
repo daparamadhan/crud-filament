@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Swa Buana - Contact</title>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link 
-    href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700;900&family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap" 
-    rel="stylesheet" 
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700;900&family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap"
+    rel="stylesheet"
   />
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 </head>
@@ -20,27 +20,26 @@
         <path d="M24 4C25.8 14.2 33.8 22.2 44 24C33.8 25.8 25.8 33.8 24 44C22.2 33.8 14.2 25.8 4 24C14.2 22.2 22.2 14.2 24 4Z"/>
       </svg>
     </div>
-    <h2 class="text-lg font-bold tracking-tight">Swa Buana</h2>
+    <a href="{{ route('home') }}" class="text-lg font-bold tracking-tight hover:text-[#47c1ea] transition">Swa Buana</a>
   </div>
   <nav class="flex gap-8">
-    <a class="text-sm font-medium hover:text-[#47c1ea]" href="/about">About</a>
-    <a class="text-sm font-medium hover:text-[#47c1ea]" href="/services">Services</a>
-    <a class="text-sm font-medium hover:text-[#47c1ea]" href="/contact">Contact</a>
+    <a class="text-sm font-medium hover:text-[#47c1ea]" href="{{ route('about') }}">About</a>
+    <a class="text-sm font-medium hover:text-[#47c1ea]" href="{{ route('services') }}">Services</a>
+    <a class="text-sm font-medium hover:text-[#47c1ea]" href="{{ route('contact') }}">Contact</a>
   </nav>
   <div class="flex gap-2">
-    <a href="/shipment" 
+    <a href="{{ route('shipments.index') }}"
        class="h-10 px-4 rounded-xl bg-[#47c1ea] text-white text-sm font-bold tracking-wide flex items-center justify-center hover:bg-[#3bb2d5] transition">
       Send Now
     </a>
 
-    <a href="/login" 
+    <a href="{{ route('login') }}"
        class="h-10 px-4 rounded-xl bg-[#47c1ea] text-white text-sm font-bold tracking-wide flex items-center justify-center hover:bg-[#3bb2d5] transition">
       Login
     </a>
   </div>
 </header>
 
-<!-- Hero -->
 <section class="flex items-center justify-center py-16 px-4 bg-cover bg-center"
   style="background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1588269842570-7c74bc08f0b4?fit=crop&w=1600&q=80');">
   <div class="text-center max-w-xl space-y-4">
@@ -49,7 +48,6 @@
   </div>
 </section>
 
-<!-- Contact -->
 <section class="bg-gray-50 px-6 py-16">
   <div class="max-w-6xl mx-auto text-center mb-12">
     <h2 class="text-3xl font-bold mb-4">Contact Us</h2>
@@ -58,7 +56,6 @@
   </div>
 
   <div class="grid sm:grid-cols-2 gap-12 max-w-5xl mx-auto">
-    <!-- Form -->
     <form class="space-y-6 bg-white p-8 rounded-xl border shadow-sm">
       <div>
         <label class="block text-xs font-bold mb-2 text-[#47c1ea]" for="name">Name</label>
@@ -77,13 +74,11 @@
       </button>
     </form>
 
-    <!-- FAQ Accordion -->
-<section class="bg-white px-6 py-12">
+    <section class="bg-white px-6 py-12">
   <div class="max-w-2xl mx-auto text-sm text-[#637f88]">
     <h5 class="font-bold text-[#47c1ea] text-lg mb-6 text-center">Frequently Asked Questions. (FAQ)</h5>
 
     <div class="space-y-4">
-      <!-- Item -->
       <div class="border rounded-lg overflow-hidden">
         <button onclick="toggleFAQ(0)" class="w-full px-4 py-3 bg-gray-50 hover:bg-gray-100 flex justify-between items-center text-left">
           <span class="font-semibold text-[#1e293b]">How can I track my parcel?</span>
@@ -93,7 +88,6 @@
           You can use the create feature <span class="font-medium text-[#47c1ea]">“Track Packages”</span> on our website homepage. Enter your tracking number to view the shipping status in real-time.</div>
       </div>
 
-      <!-- Item -->
       <div class="border rounded-lg overflow-hidden">
         <button onclick="toggleFAQ(1)" class="w-full px-4 py-3 bg-gray-50 hover:bg-gray-100 flex justify-between items-center text-left">
           <span class="font-semibold text-[#1e293b]">Does Swa Buana serve deliveries outside the city or outside the island?</span>
@@ -103,7 +97,6 @@
           Yes, we serve delivery of goods to all regions of Indonesia, including outside islands and remote areas, with estimated times adjusted based on the route and service selected. </div>
       </div>
 
-      <!-- Item -->
       <div class="border rounded-lg overflow-hidden">
         <button onclick="toggleFAQ(2)" class="w-full px-4 py-3 bg-gray-50 hover:bg-gray-100 flex justify-between items-center text-left">
           <span class="font-semibold text-[#1e293b]">What types of delivery services are available?</span>
@@ -114,7 +107,6 @@
         </div>
       </div>
 
-      <!-- Item -->
       <div class="border rounded-lg overflow-hidden">
         <button onclick="toggleFAQ(3)" class="w-full px-4 py-3 bg-gray-50 hover:bg-gray-100 flex justify-between items-center text-left">
           <span class="font-semibold text-[#1e293b]">What if my package is lost or damaged in shipping?</span>
@@ -125,7 +117,6 @@
         </div>
       </div>
 
-      <!-- Item -->
       <div class="border rounded-lg overflow-hidden">
         <button onclick="toggleFAQ(4)" class="w-full px-4 py-3 bg-gray-50 hover:bg-gray-100 flex justify-between items-center text-left">
           <span class="font-semibold text-[#1e293b]">Where is Swa Buana's head office located?</span>
@@ -157,13 +148,12 @@
   }
 </script>
 
-<!-- Footer -->
 <footer class="bg-gray-50 mt-12 border-t">
   <div class="max-w-4xl mx-auto px-10 py-8 text-center space-y-4">
     <div class="flex justify-center gap-6 flex-wrap text-sm">
-      <a href="/about" class="hover:text-[#47c1ea] transition">About</a>
-      <a href="/services" class="hover:text-[#47c1ea] transition">Services</a>
-      <a href="/contact" class="hover:text-[#47c1ea] transition">Contact</a>
+      <a href="{{ route('about') }}" class="hover:text-[#47c1ea] transition">About</a>
+      <a href="{{ route('services') }}" class="hover:text-[#47c1ea] transition">Services</a>
+      <a href="{{ route('contact') }}" class="hover:text-[#47c1ea] transition">Contact</a>
       <a href="#" class="hover:text-[#47c1ea] transition">Privacy Policy</a>
       <a href="#" class="hover:text-[#47c1ea] transition">Terms of Service</a>
     </div>

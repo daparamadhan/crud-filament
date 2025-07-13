@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Swa Buana</title>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link 
-    href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700;900&family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap" 
-    rel="stylesheet" 
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700;900&family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap"
+    rel="stylesheet"
   />
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 </head>
@@ -20,27 +20,26 @@
         <path d="M24 4C25.8 14.2 33.8 22.2 44 24C33.8 25.8 25.8 33.8 24 44C22.2 33.8 14.2 25.8 4 24C14.2 22.2 22.2 14.2 24 4Z"/>
       </svg>
     </div>
-    <h2 class="text-lg font-bold tracking-tight">Swa Buana</h2>
+    <a href="{{ route('home') }}" class="text-lg font-bold tracking-tight hover:text-[#47c1ea] transition">Swa Buana</a>
   </div>
   <nav class="flex gap-8">
-    <a class="text-sm font-medium hover:text-[#47c1ea]" href="/about">About</a>
-    <a class="text-sm font-medium hover:text-[#47c1ea]" href="/services">Services</a>
-    <a class="text-sm font-medium hover:text-[#47c1ea]" href="/contact">Contact</a>
+    <a class="text-sm font-medium hover:text-[#47c1ea]" href="{{ route('about') }}">About</a>
+    <a class="text-sm font-medium hover:text-[#47c1ea]" href="{{ route('services') }}">Services</a>
+    <a class="text-sm font-medium hover:text-[#47c1ea]" href="{{ route('contact') }}">Contact</a>
   </nav>
   <div class="flex gap-2">
-    <a href="/shipment" 
+    <a href="{{ route('shipments.index') }}"
        class="h-10 px-4 rounded-xl bg-[#47c1ea] text-white text-sm font-bold tracking-wide flex items-center justify-center hover:bg-[#3bb2d5] transition">
       Send Now
     </a>
 
-    <a href="/login" 
+    <a href="{{ route('login') }}"
        class="h-10 px-4 rounded-xl bg-[#47c1ea] text-white text-sm font-bold tracking-wide flex items-center justify-center hover:bg-[#3bb2d5] transition">
       Login
     </a>
   </div>
 </header>
 
-<!-- Hero -->
 <section class="flex items-center justify-center py-16 px-4 bg-cover bg-center"
   style="background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1588269842570-7c74bc08f0b4?fit=crop&w=1600&q=80');">
   <div class="text-center max-w-xl space-y-4">
@@ -59,7 +58,6 @@
   </div>
 </section>
 
-<!-- Why Choose Us -->
 <section class="px-10 py-12 max-w-4xl mx-auto">
   <div class="p-6 bg-white border rounded-xl shadow-md">
     <h2 class="text-3xl font-bold text-[#47c1ea] mb-4">Swa Buana Delivery Service</h2>
@@ -72,7 +70,6 @@
   </div>
 </section>
 
-<!-- Our Services -->
 <section class="px-10 py-12 max-w-6xl mx-auto">
   <div class="mb-10">
     <h2 class="text-3xl font-bold text-[#47c1ea] mb-2">Our Services</h2>
@@ -107,23 +104,22 @@
   </div>
 
   <div class="mt-8">
-    <a href="#more-services" class="inline-flex items-center gap-2 bg-[#47c1ea] hover:bg-[#3ba8cd] text-white font-semibold px-5 py-2 rounded-lg transition">
+    <a href="{{ route('services') }}" class="inline-flex items-center gap-2 bg-[#47c1ea] hover:bg-[#3ba8cd] text-white font-semibold px-5 py-2 rounded-lg transition">
       Learn More →
     </a>
   </div>
 </section>
 
-<!-- Promo Carousel -->
 <section class="px-4 py-12 max-w-6xl mx-auto">
     <h2 class="text-3xl font-bold text-[#47c1ea] mb-6">Our Promos</h2>
 
     <div class="flex gap-6 overflow-x-auto pb-4 scroll-smooth snap-x">
         @foreach ($promos as $promo)
-            <div class="flex-none w-96 bg-[#e8f8ff] border border-blue-200 rounded-xl shadow-sm overflow-hidden snap-start 
-                        active:scale-95 active:shadow-inner transition duration-200 ease-in-out">
-                
-                <img src="{{ asset('storage/' . $promo->image_path) }}" 
-                     alt="{{ $promo->title }}" 
+            <div class="flex-none w-96 bg-[#e8f8ff] border border-blue-200 rounded-xl shadow-sm overflow-hidden snap-start
+                         active:scale-95 active:shadow-inner transition duration-200 ease-in-out">
+
+                <img src="{{ asset('storage/' . $promo->image_path) }}"
+                     alt="{{ $promo->title }}"
                      class="w-full h-36 object-cover transition duration-200 ease-in-out active:brightness-90">
 
                 <div class="p-4">
@@ -139,13 +135,12 @@
     </div>
 </section>
 
-<!-- Footer -->
 <footer class="bg-gray-50 mt-12 border-t">
   <div class="max-w-4xl mx-auto px-10 py-8 text-center space-y-4">
     <div class="flex justify-center gap-6 flex-wrap text-sm">
-      <a href="/about" class="hover:text-[#47c1ea] transition">About</a>
-      <a href="#" class="hover:text-[#47c1ea] transition">Services</a>
-      <a href="#" class="hover:text-[#47c1ea] transition">Contact</a>
+      <a href="{{ route('about') }}" class="hover:text-[#47c1ea] transition">About</a>
+      <a href="{{ route('services') }}" class="hover:text-[#47c1ea] transition">Services</a>
+      <a href="{{ route('contact') }}" class="hover:text-[#47c1ea] transition">Contact</a>
       <a href="#" class="hover:text-[#47c1ea] transition">Privacy Policy</a>
       <a href="#" class="hover:text-[#47c1ea] transition">Terms of Service</a>
     </div>

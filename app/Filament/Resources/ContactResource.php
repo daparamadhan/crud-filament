@@ -18,7 +18,7 @@ class ContactResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-chat-bubble-bottom-center-text'; // Ikon yang sesuai
 
-    protected static ?string $navigationGroup = 'Site Management'; // Opsional: Kelompokkan navigasi
+    protected static ?string $navigationGroup = 'Manajemen Situs'; // Opsional: Kelompokkan navigasi
 
     public static function form(Form $form): Form
     {

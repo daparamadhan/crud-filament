@@ -20,19 +20,19 @@
         <path d="M24 4C25.8 14.2 33.8 22.2 44 24C33.8 25.8 25.8 33.8 24 44C22.2 33.8 14.2 25.8 4 24C14.2 22.2 22.2 14.2 24 4Z"/>
       </svg>
     </div>
-    <a href="{{ route('home') }}" class="text-lg font-bold tracking-tight hover:text-[#47c1ea] transition">Swa Buana</a>
+    <a href="<?php echo e(route('home')); ?>" class="text-lg font-bold tracking-tight hover:text-[#47c1ea] transition">Swa Buana</a>
   </div>
   <nav class="flex gap-8">
-    <a class="text-sm font-medium hover:text-[#47c1ea]" href="{{ route('about') }}">About</a>
-    <a class="text-sm font-medium hover:text-[#47c1ea]" href="{{ route('services') }}">Services</a>
-    <a class="text-sm font-medium hover:text-[#47c1ea]" href="{{ route('contact') }}">Contact</a>
+    <a class="text-sm font-medium hover:text-[#47c1ea]" href="<?php echo e(route('about')); ?>">About</a>
+    <a class="text-sm font-medium hover:text-[#47c1ea]" href="<?php echo e(route('services')); ?>">Services</a>
+    <a class="text-sm font-medium hover:text-[#47c1ea]" href="<?php echo e(route('contact')); ?>">Contact</a>
   </nav>
   <div class="flex gap-2">
-    <a href="{{ route('shipments.index') }}"
+    <a href="<?php echo e(route('shipments.index')); ?>"
        class="h-10 px-4 rounded-xl bg-[#47c1ea] text-white text-sm font-bold tracking-wide flex items-center justify-center hover:bg-[#3bb2d5] transition">
       Send Now
     </a>
-    <a href="{{ route('login') }}"
+    <a href="<?php echo e(route('login')); ?>"
        class="h-10 px-4 rounded-xl bg-[#47c1ea] text-white text-sm font-bold tracking-wide flex items-center justify-center hover:bg-[#3bb2d5] transition">
       Login
     </a>
@@ -120,7 +120,7 @@
       pelacakan real-time, serta layanan customer service responsif
       untuk pengalaman pengiriman yang terbaik.
     </p>
-    <a href="{{ route('contact') }}" class="inline-block bg-[#47c1ea] text-white font-bold px-6 py-3 rounded-xl hover:bg-[#3bb2d5] transition">
+    <a href="<?php echo e(route('contact')); ?>" class="inline-block bg-[#47c1ea] text-white font-bold px-6 py-3 rounded-xl hover:bg-[#3bb2d5] transition">
       Hubungi Kami
     </a>
   </div>
@@ -149,9 +149,9 @@
 <footer class="bg-gray-50 mt-12 border-t">
   <div class="max-w-4xl mx-auto px-10 py-8 text-center space-y-4">
     <div class="flex justify-center gap-6 flex-wrap text-sm">
-      <a href="{{ route('about') }}" class="hover:text-[#47c1ea] transition">About</a>
-      <a href="{{ route('services') }}" class="hover:text-[#47c1ea] transition">Services</a>
-      <a href="{{ route('contact') }}" class="hover:text-[#47c1ea] transition">Contact</a>
+      <a href="<?php echo e(route('about')); ?>" class="hover:text-[#47c1ea] transition">About</a>
+      <a href="<?php echo e(route('services')); ?>" class="hover:text-[#47c1ea] transition">Services</a>
+      <a href="<?php echo e(route('contact')); ?>" class="hover:text-[#47c1ea] transition">Contact</a>
       <a href="#" class="hover:text-[#47c1ea] transition">Privacy Policy</a>
       <a href="#" class="hover:text-[#47c1ea] transition">Terms of Service</a>
     </div>
@@ -160,4 +160,4 @@
 </footer>
 
 </body>
-</html>
+</html><?php /**PATH D:\Jejak Tugas\crud-filament\resources\views/about.blade.php ENDPATH**/ ?>
