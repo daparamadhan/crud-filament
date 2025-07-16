@@ -77,30 +77,15 @@
   </div>
 
   <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+    
+    <?php $__currentLoopData = $services; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $service): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
     <div class="p-6 bg-white border rounded-xl shadow-sm hover:border-[#47c1ea] transition">
-      <h4 class="text-lg font-semibold text-[#47c1ea] mb-1">Standard Shipping</h4>
-      <p class="text-sm text-gray-600">Ship and receive packages on the same day, both locally and intercity.</p>
+      <h4 class="text-lg font-semibold text-[#47c1ea] mb-1"><?php echo e($service->nama_service); ?></h4>
+      <p class="text-sm text-gray-600"><?php echo e($service->deskripsi); ?></p>
+      
+      
     </div>
-    <div class="p-6 bg-white border rounded-xl shadow-sm hover:border-[#47c1ea] transition">
-      <h4 class="text-lg font-semibold text-[#47c1ea] mb-1">International Shipping</h4>
-      <p class="text-sm text-gray-600">Smart locker system for storing or dropping off your shipments easily.</p>
-    </div>
-    <div class="p-6 bg-white border rounded-xl shadow-sm hover:border-[#47c1ea] transition">
-      <h4 class="text-lg font-semibold text-[#47c1ea] mb-1">Express Delivery</h4>
-      <p class="text-sm text-gray-600">Order various local products straight from our app — no need to leave home.</p>
-    </div>
-    <div class="p-6 bg-white border rounded-xl shadow-sm hover:border-[#47c1ea] transition">
-      <h4 class="text-lg font-semibold text-[#47c1ea] mb-1">SwaBig</h4>
-      <p class="text-sm text-gray-600">Send items up to 25kg and dimensions up to 50x50x80 cm with ease.</p>
-    </div>
-    <div class="p-6 bg-white border rounded-xl shadow-sm hover:border-[#47c1ea] transition">
-      <h4 class="text-lg font-semibold text-[#47c1ea] mb-1">Business Delivery</h4>
-      <p class="text-sm text-gray-600">Tailored shipping solutions for your growing business operations.</p>
-    </div>
-    <div class="p-6 bg-white border rounded-xl shadow-sm hover:border-[#47c1ea] transition">
-      <h4 class="text-lg font-semibold text-[#47c1ea] mb-1">Custom Logistics</h4>
-      <p class="text-sm text-gray-600">Need something special? Our team is ready to design a custom solution.</p>
-    </div>
+    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
   </div>
 
   <div class="mt-8">

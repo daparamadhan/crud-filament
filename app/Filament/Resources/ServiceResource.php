@@ -28,6 +28,9 @@ class ServiceResource extends Resource
                         'Standard Shipping' => 'Standard Shipping',
                         'International Shipping' => 'International Shipping',
                         'Express Delivery' => 'Express Delivery',
+                        'SwaBig' => 'SwaBig',
+                        'Business Delivery' => 'Business Delivery',
+                        'Custom Logistics' => 'Custom Logistics',
                     ])
                     ->live()
                     ->afterStateUpdated(function (callable $set, $state) {
@@ -37,6 +40,12 @@ class ServiceResource extends Resource
                             $set('harga', 80000);
                         } elseif ($state === 'Express Delivery') {
                             $set('harga', 50000);
+                        } elseif ($state === 'SwaBig') {
+                            $set('harga', 100000);
+                        } elseif ($state === 'Business Delivery') {
+                            $set('harga', 30000);
+                        } elseif ($state === 'Custom Logistics') {
+                            $set('harga', 40000);
                         }
                     }),
 

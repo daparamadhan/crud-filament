@@ -77,30 +77,17 @@
   </div>
 
   <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+    {{-- Loop melalui data layanan dari database --}}
+    @foreach($services as $service)
     <div class="p-6 bg-white border rounded-xl shadow-sm hover:border-[#47c1ea] transition">
-      <h4 class="text-lg font-semibold text-[#47c1ea] mb-1">Standard Shipping</h4>
-      <p class="text-sm text-gray-600">Ship and receive packages on the same day, both locally and intercity.</p>
+      <h4 class="text-lg font-semibold text-[#47c1ea] mb-1">{{ $service->nama_service }}</h4>
+      <p class="text-sm text-gray-600">{{ $service->deskripsi }}</p>
+      {{-- Opsional: Anda bisa menambahkan ikon/gambar di sini jika ada di model Service --}}
+      {{-- @if($service->image_path)
+        <img src="{{ asset('storage/' . $service->image_path) }}" alt="{{ $service->nama_service }}" class="w-10 h-10 mb-2">
+      @endif --}}
     </div>
-    <div class="p-6 bg-white border rounded-xl shadow-sm hover:border-[#47c1ea] transition">
-      <h4 class="text-lg font-semibold text-[#47c1ea] mb-1">International Shipping</h4>
-      <p class="text-sm text-gray-600">Smart locker system for storing or dropping off your shipments easily.</p>
-    </div>
-    <div class="p-6 bg-white border rounded-xl shadow-sm hover:border-[#47c1ea] transition">
-      <h4 class="text-lg font-semibold text-[#47c1ea] mb-1">Express Delivery</h4>
-      <p class="text-sm text-gray-600">Order various local products straight from our app — no need to leave home.</p>
-    </div>
-    <div class="p-6 bg-white border rounded-xl shadow-sm hover:border-[#47c1ea] transition">
-      <h4 class="text-lg font-semibold text-[#47c1ea] mb-1">SwaBig</h4>
-      <p class="text-sm text-gray-600">Send items up to 25kg and dimensions up to 50x50x80 cm with ease.</p>
-    </div>
-    <div class="p-6 bg-white border rounded-xl shadow-sm hover:border-[#47c1ea] transition">
-      <h4 class="text-lg font-semibold text-[#47c1ea] mb-1">Business Delivery</h4>
-      <p class="text-sm text-gray-600">Tailored shipping solutions for your growing business operations.</p>
-    </div>
-    <div class="p-6 bg-white border rounded-xl shadow-sm hover:border-[#47c1ea] transition">
-      <h4 class="text-lg font-semibold text-[#47c1ea] mb-1">Custom Logistics</h4>
-      <p class="text-sm text-gray-600">Need something special? Our team is ready to design a custom solution.</p>
-    </div>
+    @endforeach
   </div>
 
   <div class="mt-8">
