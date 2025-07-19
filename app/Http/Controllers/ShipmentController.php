@@ -7,6 +7,14 @@ use App\Models\Shipment;
 
 class ShipmentController extends Controller
 {
+    // Menampilkan daftar pengiriman
+    public function index()
+    {
+        $shipments = Shipment::all();
+        return view('shipment', compact('shipments'));
+    }
+
+    // Menyimpan data pengiriman
     public function store(Request $request)
     {
         $validated = $request->validate([
