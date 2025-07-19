@@ -26,7 +26,8 @@ class UserPanelProvider extends PanelProvider
             ->id('user')
             ->path('user')
             ->login()
-            ->homeUrl(fn () => route('filament.user.resources.services.index')) 
+            ->homeUrl(fn () => route('filament.user.resources.services.index'))
+            ->brandName('Swa Buana') 
             ->colors([
                 'primary' => Color::Amber,
             ])
@@ -38,7 +39,7 @@ class UserPanelProvider extends PanelProvider
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\\Filament\\Widgets')
             ->widgets([
                 Widgets\AccountWidget::class,
-                Widgets\FilamentInfoWidget::class,
+                //Widgets\FilamentInfoWidget::class,
             ])
             ->middleware([
                 EncryptCookies::class,
