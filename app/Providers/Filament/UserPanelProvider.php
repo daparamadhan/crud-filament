@@ -27,7 +27,7 @@ class UserPanelProvider extends PanelProvider
             ->path('user')
             ->login()
             ->homeUrl(fn () => route('filament.user.resources.services.index'))
-            ->brandName('Swa Buana') 
+            ->brandName('Swa Buana') //Penamaan
             ->colors([
                 'primary' => Color::Amber,
             ])
