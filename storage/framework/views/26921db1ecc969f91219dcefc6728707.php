@@ -13,7 +13,7 @@
 </head>
 <body class="font-['Plus Jakarta Sans','Noto Sans',sans-serif] bg-white text-[#111618]">
 
-<header class="flex items-center justify-between border-b px-10 py-3">
+<header class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between border-b px-10 py-3 bg-white shadow-md">
   <div class="flex items-center gap-4">
     <div class="size-4 text-[#47c1ea]">
       <svg viewBox="0 0 48 48" fill="currentColor" xmlns="http://www.w3.org/2000/svg">

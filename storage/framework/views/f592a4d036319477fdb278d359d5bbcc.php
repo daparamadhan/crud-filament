@@ -13,7 +13,7 @@
 </head>
 <body class="font-['Plus Jakarta Sans','Noto Sans',sans-serif] bg-white text-[#111618]">
 
-<header class="flex items-center justify-between border-b px-10 py-3">
+<header class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between border-b px-10 py-3 bg-white shadow-md">
   <div class="flex items-center gap-4">
     <div class="size-4 text-[#47c1ea]">
       <svg viewBox="0 0 48 48" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -96,29 +96,25 @@
 </section>
 
 <section class="px-4 py-12 max-w-6xl mx-auto">
-    <h2 class="text-3xl font-bold text-[#47c1ea] mb-6">Our Promos</h2>
+  <h2 class="text-3xl font-bold text-[#47c1ea] mb-6">Our Promos</h2>
+  <div class="flex gap-6 overflow-x-auto pb-4 scroll-smooth snap-x">
+    <?php $__currentLoopData = $promos; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $promo): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+      <div class="flex-none w-96 bg-[#e8f8ff] border border-blue-200 rounded-xl shadow-sm overflow-hidden snap-startactive:scale-95 active:shadow-inner transition duration-200 ease-in-out">
+        <img src="<?php echo e(asset('storage/' . $promo->image_path)); ?>" 
+        alt="<?php echo e($promo->title); ?>"
+        class="w-full h-36 object-cover transition duration-200 ease-in-out active:brightness-90">
+        <div class="p-4">
+          <h3 class="text-xl font-semibold text-[#47c1ea] mb-2"><?php echo e($promo->title); ?></h3>
+            <p class="text-sm text-gray-700">
+              <?php echo e($promo->description); ?>
 
-    <div class="flex gap-6 overflow-x-auto pb-4 scroll-smooth snap-x">
-        <?php $__currentLoopData = $promos; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $promo): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-            <div class="flex-none w-96 bg-[#e8f8ff] border border-blue-200 rounded-xl shadow-sm overflow-hidden snap-start
-                         active:scale-95 active:shadow-inner transition duration-200 ease-in-out">
-
-                <img src="<?php echo e(asset('storage/' . $promo->image_path)); ?>"
-                     alt="<?php echo e($promo->title); ?>"
-                     class="w-full h-36 object-cover transition duration-200 ease-in-out active:brightness-90">
-
-                <div class="p-4">
-                    <h3 class="text-xl font-semibold text-[#47c1ea] mb-2"><?php echo e($promo->title); ?></h3>
-                    <p class="text-sm text-gray-700">
-                        <?php echo e($promo->description); ?>
-
-                    </p>
-                    <p class="text-xs text-gray-500 mt-2">*Terms apply</p>
-                    <p class="text-xs text-[#6a9db2] mt-1"><?php echo e($promo->hashtags); ?></p>
-                </div>
-            </div>
-        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-    </div>
+            </p>
+          <p class="text-xs text-gray-500 mt-2">*Terms apply</p>
+          <p class="text-xs text-[#6a9db2] mt-1"><?php echo e($promo->hashtags); ?></p>
+        </div>
+      </div>
+    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+  </div>
 </section>
 
 <footer class="bg-gray-50 mt-12 border-t">
@@ -131,6 +127,7 @@
       <a href="#" class="hover:text-[#47c1ea] transition">Terms of Service</a>
     </div>
     <p class="text-xs text-[#637f88]">&copy; 2025 Swa Buana. All rights reserved.</p>
+    
   </div>
 </footer>
 
