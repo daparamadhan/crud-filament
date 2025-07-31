@@ -40,22 +40,16 @@
   </div>
 </header>
 
-<section class="flex items-center justify-center py-16 px-4 bg-cover bg-center"
-  style="background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1588269842570-7c74bc08f0b4?fit=crop&w=1600&q=80');">
-  <div class="text-center max-w-xl space-y-4">
-    <h1 class="text-4xl font-black text-white tracking-tight">Your Trusted Shipping Partner</h1>
-    <p class="text-white text-base">Secure delivery from Bandung to anywhere in the world.</p>
-  </div>
-</section>
-
 <section class="bg-gray-50 px-6 py-16">
   <div class="max-w-6xl mx-auto text-center mb-12">
     <h2 class="text-3xl font-bold mb-4">Contact Us</h2>
     <p class="text-[#637f88] max-w-3xl mx-auto text-sm">
-      Contact us for more information on shipping services, co-operation, or other enquiries. We are here to help you.</p>
+      Contact us for more information on shipping services, co-operation, or other enquiries. We are here to help you.
+    </p>
   </div>
 
   <div class="grid sm:grid-cols-2 gap-12 max-w-5xl mx-auto">
+    <!-- Form Kontak -->
     <form class="space-y-6 bg-white p-8 rounded-xl border shadow-sm">
       <div>
         <label class="block text-xs font-bold mb-2 text-[#47c1ea]" for="name">Name</label>
@@ -74,61 +68,69 @@
       </button>
     </form>
 
-    <section class="bg-white px-6 py-12">
-  <div class="max-w-2xl mx-auto text-sm text-[#637f88]">
-    <h5 class="font-bold text-[#47c1ea] text-lg mb-6 text-center">Frequently Asked Questions. (FAQ)</h5>
+    <!-- FAQ DIBUNGKUS AGAR SIMETRIS -->
+    <div class="bg-white p-8 rounded-xl border shadow-sm">
+      <section>
+        <div class="text-sm text-[#637f88]">
+          <h5 class="font-bold text-[#47c1ea] text-lg mb-6 text-center">Frequently Asked Questions. (FAQ)</h5>
 
-    <div class="space-y-4">
-      <div class="border rounded-lg overflow-hidden">
-        <button onclick="toggleFAQ(0)" class="w-full px-4 py-3 bg-gray-50 hover:bg-gray-100 flex justify-between items-center text-left">
-          <span class="font-semibold text-[#1e293b]">How can I track my parcel?</span>
-          <span class="faq-icon transform transition-transform duration-200">▼</span>
-        </button>
-        <div class="faq-answer hidden px-4 py-3 bg-white border-t text-[#637f88]">
-          You can use the create feature <span class="font-medium text-[#47c1ea]">“Track Packages”</span> on our website homepage. Enter your tracking number to view the shipping status in real-time.</div>
-      </div>
+          <div class="space-y-4">
+            <div class="border rounded-lg overflow-hidden">
+              <button onclick="toggleFAQ(0)" class="w-full px-4 py-3 bg-gray-50 hover:bg-gray-100 flex justify-between items-center text-left">
+                <span class="font-semibold text-[#1e293b]">How can I track my parcel?</span>
+                <span class="faq-icon transform transition-transform duration-200">▼</span>
+              </button>
+              <div class="faq-answer hidden px-4 py-3 bg-white border-t text-[#637f88]">
+                You can use the create feature <span class="font-medium text-[#47c1ea]">“Track Packages”</span> on our website homepage. Enter your tracking number to view the shipping status in real-time.
+              </div>
+            </div>
 
-      <div class="border rounded-lg overflow-hidden">
-        <button onclick="toggleFAQ(1)" class="w-full px-4 py-3 bg-gray-50 hover:bg-gray-100 flex justify-between items-center text-left">
-          <span class="font-semibold text-[#1e293b]">Does Swa Buana serve deliveries outside the city or outside the island?</span>
-          <span class="faq-icon transform transition-transform duration-200">▼</span>
-        </button>
-        <div class="faq-answer hidden px-4 py-3 bg-white border-t text-[#637f88]">
-          Yes, we serve delivery of goods to all regions of Indonesia, including outside islands and remote areas, with estimated times adjusted based on the route and service selected. </div>
-      </div>
+            <div class="border rounded-lg overflow-hidden">
+              <button onclick="toggleFAQ(1)" class="w-full px-4 py-3 bg-gray-50 hover:bg-gray-100 flex justify-between items-center text-left">
+                <span class="font-semibold text-[#1e293b]">Does Swa Buana serve deliveries outside the city or outside the island?</span>
+                <span class="faq-icon transform transition-transform duration-200">▼</span>
+              </button>
+              <div class="faq-answer hidden px-4 py-3 bg-white border-t text-[#637f88]">
+                Yes, we serve delivery of goods to all regions of Indonesia, including outside islands and remote areas, with estimated times adjusted based on the route and service selected.
+              </div>
+            </div>
 
-      <div class="border rounded-lg overflow-hidden">
-        <button onclick="toggleFAQ(2)" class="w-full px-4 py-3 bg-gray-50 hover:bg-gray-100 flex justify-between items-center text-left">
-          <span class="font-semibold text-[#1e293b]">What types of delivery services are available?</span>
-          <span class="faq-icon transform transition-transform duration-200">▼</span>
-        </button>
-        <div class="faq-answer hidden px-4 py-3 bg-white border-t text-[#637f88]">
-          We provide various types of services such as <span class="font-medium">Regular, Express, and Heavy Cargo</span>. Each service has different estimated times and rates.
+            <div class="border rounded-lg overflow-hidden">
+              <button onclick="toggleFAQ(2)" class="w-full px-4 py-3 bg-gray-50 hover:bg-gray-100 flex justify-between items-center text-left">
+                <span class="font-semibold text-[#1e293b]">What types of delivery services are available?</span>
+                <span class="faq-icon transform transition-transform duration-200">▼</span>
+              </button>
+              <div class="faq-answer hidden px-4 py-3 bg-white border-t text-[#637f88]">
+                We provide various types of services such as <span class="font-medium">Regular, Express, and Heavy Cargo</span>. Each service has different estimated times and rates.
+              </div>
+            </div>
+
+            <div class="border rounded-lg overflow-hidden">
+              <button onclick="toggleFAQ(3)" class="w-full px-4 py-3 bg-gray-50 hover:bg-gray-100 flex justify-between items-center text-left">
+                <span class="font-semibold text-[#1e293b]">What if my package is lost or damaged in shipping?</span>
+                <span class="faq-icon transform transition-transform duration-200">▼</span>
+              </button>
+              <div class="faq-answer hidden px-4 py-3 bg-white border-t text-[#637f88]">
+                Please contact our customer service team via WhatsApp at 0813-2197-0383 or email <a href="mailto:sbpcargo@swabuana.co.id" class="text-[#47c1ea] underline">sbpcargo@swabuana.co.id</a> for further claims and handling processes.
+              </div>
+            </div>
+
+            <div class="border rounded-lg overflow-hidden">
+              <button onclick="toggleFAQ(4)" class="w-full px-4 py-3 bg-gray-50 hover:bg-gray-100 flex justify-between items-center text-left">
+                <span class="font-semibold text-[#1e293b]">Where is Swa Buana's head office located?</span>
+                <span class="faq-icon transform transition-transform duration-200">▼</span>
+              </button>
+              <div class="faq-answer hidden px-4 py-3 bg-white border-t text-[#637f88]">
+                Our head office is located at Jl. Abdul Rahman Saleh No.1A, Husen Sastranegara, Cicendo, Bandung 40174.
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-
-      <div class="border rounded-lg overflow-hidden">
-        <button onclick="toggleFAQ(3)" class="w-full px-4 py-3 bg-gray-50 hover:bg-gray-100 flex justify-between items-center text-left">
-          <span class="font-semibold text-[#1e293b]">What if my package is lost or damaged in shipping?</span>
-          <span class="faq-icon transform transition-transform duration-200">▼</span>
-        </button>
-        <div class="faq-answer hidden px-4 py-3 bg-white border-t text-[#637f88]">
-          Please contact our customer service team via WhatsApp at 0813-2197-0383 or email <a href="mailto:sbpcargo@swabuana.co.id" class="text-[#47c1ea] underline">sbpcargo@swabuana.co.id</a> for further claims and handling processes.
-        </div>
-      </div>
-
-      <div class="border rounded-lg overflow-hidden">
-        <button onclick="toggleFAQ(4)" class="w-full px-4 py-3 bg-gray-50 hover:bg-gray-100 flex justify-between items-center text-left">
-          <span class="font-semibold text-[#1e293b]">Where is Swa Buana's head office located?</span>
-          <span class="faq-icon transform transition-transform duration-200">▼</span>
-        </button>
-        <div class="faq-answer hidden px-4 py-3 bg-white border-t text-[#637f88]">
-          Our head office is located at Jl. Abdul Rahman Saleh No.1A, Husen Sastranegara, Cicendo, Bandung 40174.
-        </div>
-      </div>
+      </section>
     </div>
   </div>
 </section>
+
 
 <script>
   function toggleFAQ(index) {

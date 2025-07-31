@@ -20,7 +20,7 @@
         <path d="M24 4C25.8 14.2 33.8 22.2 44 24C33.8 25.8 25.8 33.8 24 44C22.2 33.8 14.2 25.8 4 24C14.2 22.2 22.2 14.2 24 4Z"/>
       </svg>
     </div>
-    <a href="{{ route('home') }}" class="text-lg font-bold tracking-tight hover:text-[#47c1ea] transition">Swa Buana</a>
+    <a href="{{ route('home') }}" class="text-lg font-bold tracking-tight hover:text-[#47c1ea] transition">Logo</a>
   </div>
   <nav class="flex gap-8">
     <a class="text-sm font-medium hover:text-[#47c1ea]" href="{{ route('about') }}">About</a>
