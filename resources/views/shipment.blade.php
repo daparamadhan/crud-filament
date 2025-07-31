@@ -195,7 +195,6 @@
   </div>
 </form>
 
-<!-- Footer -->
 <footer class="bg-gray-50 mt-12 border-t">
   <div class="max-w-4xl mx-auto px-10 py-8 text-center space-y-4">
     <div class="flex justify-center gap-6 flex-wrap text-sm">
