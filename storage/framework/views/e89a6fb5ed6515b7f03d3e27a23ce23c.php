@@ -17,16 +17,16 @@
         <path d="M24 4C25.8 14.2 33.8 22.2 44 24C33.8 25.8 25.8 33.8 24 44C22.2 33.8 14.2 25.8 4 24C14.2 22.2 22.2 14.2 24 4Z"/>
       </svg>
     </div>
-    <a href="{{ route('home') }}" class="text-lg font-bold tracking-tight text-white hover:text-[#bbf7ff] transition">Swa Buana</a>
+    <a href="<?php echo e(route('home')); ?>" class="text-lg font-bold tracking-tight text-white hover:text-[#bbf7ff] transition">Swa Buana</a>
   </div>
   <nav class="flex gap-8">
-    <a href="{{ route('home') }}" class="text-sm font-medium transition {{ request()->routeIs('home') ? 'text-[#bbf7ff]' : 'text-white hover:text-[#bbf7ff]' }}">Home</a>
-    <a href="{{ route('services') }}" class="text-sm font-medium transition {{ request()->routeIs('services') ? 'text-[#bbf7ff]' : 'text-white hover:text-[#bbf7ff]' }}">Services</a>
-    <a href="{{ route('contact') }}" class="text-sm font-medium transition {{ request()->routeIs('contact') ? 'text-[#bbf7ff]' : 'text-white hover:text-[#bbf7ff]' }}">Contact</a>
+    <a href="<?php echo e(route('home')); ?>" class="text-sm font-medium transition <?php echo e(request()->routeIs('home') ? 'text-[#bbf7ff]' : 'text-white hover:text-[#bbf7ff]'); ?>">Home</a>
+    <a href="<?php echo e(route('services')); ?>" class="text-sm font-medium transition <?php echo e(request()->routeIs('services') ? 'text-[#bbf7ff]' : 'text-white hover:text-[#bbf7ff]'); ?>">Services</a>
+    <a href="<?php echo e(route('contact')); ?>" class="text-sm font-medium transition <?php echo e(request()->routeIs('contact') ? 'text-[#bbf7ff]' : 'text-white hover:text-[#bbf7ff]'); ?>">Contact</a>
   </nav>
   <div class="flex gap-2">
-    <a href="{{ route('shipments.index') }}" class="h-10 px-4 rounded-xl bg-white text-[#47c1ea] text-sm font-bold tracking-wide flex items-center justify-center hover:bg-gray-100 transition">Send Now</a>
-    <a href="{{ route('login') }}" class="h-10 px-4 rounded-xl bg-white text-[#47c1ea] text-sm font-bold tracking-wide flex items-center justify-center hover:bg-gray-100 transition">Login</a>
+    <a href="<?php echo e(route('shipments.index')); ?>" class="h-10 px-4 rounded-xl bg-white text-[#47c1ea] text-sm font-bold tracking-wide flex items-center justify-center hover:bg-gray-100 transition">Send Now</a>
+    <a href="<?php echo e(route('login')); ?>" class="h-10 px-4 rounded-xl bg-white text-[#47c1ea] text-sm font-bold tracking-wide flex items-center justify-center hover:bg-gray-100 transition">Login</a>
   </div>
 </header>
 
@@ -150,10 +150,10 @@
       <div>
         <h3 class="font-bold text-lg mb-3">Tautan Cepat</h3>
         <ul class="space-y-2 text-sm">
-          <li><a href="{{ route('home') }}" class="hover:underline">Beranda</a></li>
-          <li><a href="{{ route('about') }}" class="hover:underline">Tentang Kami</a></li>
-          <li><a href="{{ route('services') }}" class="hover:underline">Layanan</a></li>
-          <li><a href="{{ route('contact') }}" class="hover:underline">Kontak</a></li>
+          <li><a href="<?php echo e(route('home')); ?>" class="hover:underline">Beranda</a></li>
+          <li><a href="<?php echo e(route('about')); ?>" class="hover:underline">Tentang Kami</a></li>
+          <li><a href="<?php echo e(route('services')); ?>" class="hover:underline">Layanan</a></li>
+          <li><a href="<?php echo e(route('contact')); ?>" class="hover:underline">Kontak</a></li>
         </ul>
       </div>
 
@@ -232,3 +232,4 @@
 
 </body>
 </html>
+<?php /**PATH G:\crud-filament\crud-filament\resources\views/contact.blade.php ENDPATH**/ ?>
