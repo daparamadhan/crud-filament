@@ -13,46 +13,44 @@
 </head>
 <body class="font-['Plus Jakarta Sans','Noto Sans',sans-serif] bg-white text-[#111618]">
 
-<header class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between border-b px-10 py-3 bg-[#47c1ea] shadow-md">
-  <div class="flex items-center gap-4">
-    <div class="size-4 text-white">
-      <svg viewBox="0 0 48 48" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-        <path d="M24 4C25.8 14.2 33.8 22.2 44 24C33.8 25.8 25.8 33.8 24 44C22.2 33.8 14.2 25.8 4 24C14.2 22.2 22.2 14.2 24 4Z"/>
-      </svg>
+<header class="fixed top-0 left-0 right-0 z-50 bg-[#47c1ea] border-b shadow-md">
+  <div class="flex items-center justify-between px-10 py-3 max-w-screen-xl mx-auto">
+    <div class="flex items-center gap-4">
+      <div class="size-4 text-white">
+        <svg viewBox="0 0 48 48" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path d="M24 4C25.8 14.2 33.8 22.2 44 24C33.8 25.8 25.8 33.8 24 44C22.2 33.8 14.2 25.8 4 24C14.2 22.2 22.2 14.2 24 4Z"/>
+        </svg>
+      </div>
+      <a href="{{ route('home') }}" class="text-lg font-bold tracking-tight text-white hover:text-[#bbf7ff] transition">Swa Buana</a>
     </div>
-    <a href="{{ route('home') }}" class="text-lg font-bold tracking-tight hover:text-[#47c1ea] transition">Swa Buana</a>
-  </div>
-  <nav class="flex gap-8">
-  <a href="{{ route('home') }}"
-     class="text-sm font-medium transition 
-     {{ request()->routeIs('home') ? 'text-[#bbf7ff]' : 'text-white hover:text-[#bbf7ff]' }}">
-    Home
-  </a>
-  <a href="{{ route('services') }}"
-     class="text-sm font-medium transition 
-     {{ request()->routeIs('services') ? 'text-[#bbf7ff]' : 'text-white hover:text-[#bbf7ff]' }}">
-    Services
-  </a>
-  <a href="{{ route('contact') }}"
-     class="text-sm font-medium transition 
-     {{ request()->routeIs('contact') ? 'text-[#bbf7ff]' : 'text-white hover:text-[#bbf7ff]' }}">
-    Contact
-  </a>
-</nav>
-
-  <div class="flex gap-2">
-    <a href="{{ route('shipments.index') }}"
-       class="h-10 px-4 rounded-xl bg-white text-[#47c1ea] text-sm font-bold tracking-wide flex items-center justify-center hover:bg-gray-100 transition">
-      Send Now
-    </a>
-    <a href="{{ route('login') }}"
-       class="h-10 px-4 rounded-xl bg-white text-[#47c1ea] text-sm font-bold tracking-wide flex items-center justify-center hover:bg-gray-100 transition">
-      Login
-    </a>
+    <nav class="flex gap-8">
+      <a href="{{ route('home') }}"
+         class="text-sm font-medium transition {{ request()->routeIs('home') ? 'text-[#bbf7ff]' : 'text-white hover:text-[#bbf7ff]' }}">
+        Home
+      </a>
+      <a href="{{ route('services') }}"
+         class="text-sm font-medium transition {{ request()->routeIs('services') ? 'text-[#bbf7ff]' : 'text-white hover:text-[#bbf7ff]' }}">
+        Services
+      </a>
+      <a href="{{ route('contact') }}"
+         class="text-sm font-medium transition {{ request()->routeIs('contact') ? 'text-[#bbf7ff]' : 'text-white hover:text-[#bbf7ff]' }}">
+        Contact
+      </a>
+    </nav>
+    <div class="flex gap-2">
+      <a href="{{ route('shipments.index') }}"
+         class="h-10 px-4 rounded-xl bg-white text-[#47c1ea] text-sm font-bold tracking-wide flex items-center justify-center hover:bg-gray-100 transition">
+        Send Now
+      </a>
+      <a href="{{ route('login') }}"
+         class="h-10 px-4 rounded-xl bg-white text-[#47c1ea] text-sm font-bold tracking-wide flex items-center justify-center hover:bg-gray-100 transition">
+        Login
+      </a>
+    </div>
   </div>
 </header>
->
-<section class="flex items-center justify-center py-16 px-4 bg-cover bg-center"
+
+<section class="flex items-center justify-center pt-24 pb-16 px-4 bg-cover bg-center"
   style="background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1588269842570-7c74bc08f0b4?fit=crop&w=1600&q=80');">
   <div class="text-center max-w-xl space-y-4">
     <h1 class="text-4xl font-black text-white tracking-tight">Your Trusted Shipping Partner</h1>
