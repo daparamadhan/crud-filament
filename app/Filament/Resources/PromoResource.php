@@ -41,7 +41,6 @@ class PromoResource extends Resource
 
                 FileUpload::make('image_path')
                     ->label('Promo Image')
-                    ->image()
                     ->directory('promo_images')
                     ->disk('public')
                     ->required()
