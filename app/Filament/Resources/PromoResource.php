@@ -42,13 +42,10 @@ class PromoResource extends Resource
                 FileUpload::make('image_path')
                     ->label('Promo Image')
                     ->image()
-                    ->imageEditor()
-                    ->imageCropAspectRatio('16:9')
                     ->directory('promo_images')
                     ->disk('public')
                     ->required()
-                    ->acceptedFileTypes(['image/jpeg', 'image/jpg', 'image/png', 'image/gif'])
-                    ->maxSize(5120) // 5MB
+                    ->maxSize(10240) // 10MB
                     ->columnSpan('full'),
 
                 TextInput::make('hashtags')

@@ -94,8 +94,8 @@
                 {{-- Service Image / Icon --}}
                 <div class="w-20 h-20 md:w-28 md:h-28">
                     @if ($service->image_path)
-                        <img src="{{ asset('storage/app/public/' . $service->image_path) }}"
-                            alt="{{ $service->nama_service }}" class="w-full h-full object-contain mx-auto">
+                        <img src="{{ asset('storages/' . $service->image_path) }}" alt="{{ $service->nama_service }}"
+                            class="w-full h-full object-contain mx-auto">
                     @elseif(str_contains($service->nama_service, 'Standard'))
                         <img src="/icons/truck.svg" alt="Standard Shipping"
                             class="w-full h-full object-contain mx-auto">

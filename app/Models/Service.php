@@ -19,7 +19,7 @@ class Service extends Model
     {
         return Attribute::get(function () {
             return $this->image_path
-                ? asset('storage/app/public/' . $this->image_path)
+                ? asset('storages/' . $this->image_path)
                 : asset('/icons/flash.svg');
         });
     }
