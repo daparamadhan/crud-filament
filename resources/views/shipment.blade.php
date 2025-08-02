@@ -25,7 +25,7 @@
     <h2 class="text-lg font-bold tracking-tight">Swa Buana</h2>
   </div>
   <nav class="flex gap-8">
-    <a class="text-sm font-medium hover:text-[#47c1ea]" href="/about">About</a>
+    <a class="text-sm font-medium hover:text-[#47c1ea]" href="/home">Home</a>
     <a class="text-sm font-medium hover:text-[#47c1ea]" href="/services">Services</a>
     <a class="text-sm font-medium hover:text-[#47c1ea]" href="/contact">Contact</a>
   </nav>
