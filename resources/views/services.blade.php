@@ -119,66 +119,54 @@
 <footer class="bg-gradient-to-br from-[#47c1ea] to-[#3bb2d5] text-white pt-16">
   <div class="max-w-6xl mx-auto grid md:grid-cols-4 gap-10 px-6 pb-16">
 
-    <!-- Tentang Kami -->
     <div>
-      <h3 class="font-bold text-lg mb-3">Tentang Kami</h3>
+      <h3 class="font-bold text-lg mb-3">About Us</h3>
       <p class="text-sm leading-relaxed">
-        PT. Swa Buana Pratama adalah perusahaan logistik yang melayani ekspedisi cepat, cargo udara-laut, PPJK, dan charter pesawat sejak 2008.
+        PT. Swa Buana Pratama is a logistics company providing fast expedition, air-sea cargo, customs clearance (PPJK), and aircraft charter services since 2008.
       </p>
-      <p class="mt-4 font-semibold text-sm">Jam Operasional:</p>
-      <p class="text-sm">Senin - Sabtu, 08:00 - 22:00</p>
+      <p class="mt-4 font-semibold text-sm">Operating Hours:</p>
+      <p class="text-sm">Monday - Saturday, 08:00 AM - 10:00 PM</p>
     </div>
 
-    <!-- Tautan Cepat -->
     <div>
-      <h3 class="font-bold text-lg mb-3">Tautan Cepat</h3>
+      <h3 class="font-bold text-lg mb-3">Quick Links</h3>
       <ul class="space-y-2 text-sm">
-        <li><a href="{{ route('home') }}" class="hover:underline">Beranda</a></li>
-        <li><a href="{{ route('about') }}" class="hover:underline">Tentang Kami</a></li>
-        <li><a href="{{ route('services') }}" class="hover:underline">Layanan</a></li>
-        <li><a href="{{ route('contact') }}" class="hover:underline">Kontak</a></li>
+        <li><a href="{{ route('home') }}" class="hover:underline">Home</a></li>
+        <li><a href="{{ route('services') }}" class="hover:underline">Services</a></li>
+        <li><a href="{{ route('contact') }}" class="hover:underline">Contact</a></li>
       </ul>
     </div>
 
-    <!-- Kontak -->
     <div>
-      <h3 class="font-bold text-lg mb-3">Kontak</h3>
+      <h3 class="font-bold text-lg mb-3">Contact</h3>
       <p class="text-sm">Jl. Abdul Rahman Saleh No.1A, Cicendo, Bandung 40174</p>
-      <p class="text-sm mt-2">Telp: (022) 86060352</p>
+      <p class="text-sm mt-2">Phone: (022) 86060352</p>
       <p class="text-sm">WA: 0813-2197-0383</p>
       <p class="text-sm">Email: sbpcargo@swabuana.co.id</p>
     </div>
 
-    <!-- Kirim Pesan -->
     <div>
-      <h3 class="font-bold text-lg mb-3">Kirim Pesan</h3>
+      <h3 class="font-bold text-lg mb-3">Send Message</h3>
       <form class="space-y-3">
-        <input type="text" placeholder="Nama Anda" class="w-full px-3 py-2 rounded bg-white text-sm text-black" />
-        <input type="email" placeholder="Email Anda" class="w-full px-3 py-2 rounded bg-white text-sm text-black" />
-        <textarea rows="3" placeholder="Pesan Anda" class="w-full px-3 py-2 rounded bg-white text-sm text-black"></textarea>
-        <button type="submit" class="w-full bg-white text-[#47c1ea] font-bold py-2 rounded hover:bg-blue-100 transition">Kirim</button>
+        <input type="text" placeholder="Your Name" class="w-full px-3 py-2 rounded bg-white text-sm text-black" />
+        <input type="email" placeholder="Your Email" class="w-full px-3 py-2 rounded bg-white text-sm text-black" />
+        <textarea rows="3" placeholder="Your Message" class="w-full px-3 py-2 rounded bg-white text-sm text-black"></textarea>
+        <button type="submit" class="w-full bg-white text-[#47c1ea] font-bold py-2 rounded hover:bg-blue-100 transition">Send</button>
       </form>
     </div>
   </div>
 
-  <!-- Google Maps -->
   <div class="max-w-6xl mx-auto px-6 mb-12">
-    <h3 class="font-bold text-center text-lg mb-4">Lokasi Kami</h3>
+    <h3 class="font-bold text-center text-lg mb-4">Our Location</h3>
     <div class="overflow-hidden rounded-xl shadow-lg border border-white">
-      <iframe
-        class="w-full h-72"
-        frameborder="0"
-        style="border:0"
-        loading="lazy"
-        allowfullscreen
+      <iframe class="w-full h-72" frameborder="0" style="border:0" loading="lazy" allowfullscreen
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63351.30953992406!2d107.54342184379637!3d-6.894070949623741!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e6f246cda16f%3A0x67bd34f9a49a4f64!2sJl.%20Abdul%20Rahman%20Saleh%20No.1A%2C%20Husen%20Sastranegara%2C%20Kec.%20Cicendo%2C%20Kota%20Bandung%2C%20Jawa%20Barat%2040174!5e0!3m2!1sen!2sid!4v1625060252672!5m2!1sen!2sid">
       </iframe>
     </div>
   </div>
 
-  <!-- Footer Bawah -->
   <div class="text-center text-xs py-4 text-white bg-[#289bc4]">
-    &copy; 2025 PT. Swa Buana Pratama. Seluruh hak cipta dilindungi.
+    © 2025 PT. Swa Buana Pratama. All rights reserved.
   </div>
 </footer>
 
