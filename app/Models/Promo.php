@@ -20,6 +20,6 @@ class Promo extends Model
     // Accessor untuk ambil URL gambar
     public function getImageUrlAttribute()
     {
-        return asset('storage/' . $this->image_path);
+        return asset('storage/app/public/' . $this->image_path);
     }
 }
