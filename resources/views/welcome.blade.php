@@ -123,7 +123,7 @@
             @foreach ($promos as $promo)
                 <div
                     class="flex-none w-96 bg-[#e8f8ff] border border-blue-200 rounded-xl shadow-sm overflow-hidden snap-startactive:scale-95 active:shadow-inner transition duration-200 ease-in-out">
-                    <img src="{{ asset('storage/' . $promo->image_path) }}" alt="{{ $promo->title }}"
+                    <img src="{{ asset('storage/app/public/' . $promo->image_path) }}" alt="{{ $promo->title }}"
                         class="w-full h-36 object-cover transition duration-200 ease-in-out active:brightness-90">
                     <div class="p-4">
                         <h3 class="text-xl font-semibold text-[#47c1ea] mb-2">{{ $promo->title }}</h3>
