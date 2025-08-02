@@ -23,6 +23,7 @@ class UserPanelProvider extends PanelProvider
     {
         return $panel
             ->default()
+            ->favicon(asset('assets/Logo.jpg'))
             ->id('user')
             ->path('user')
             ->login()
