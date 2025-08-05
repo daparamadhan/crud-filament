@@ -146,7 +146,7 @@
 
     const isHidden = answer.classList.contains('hidden');
     answer.classList.toggle('hidden');
-    icon.textContent = isHidden ? '−' : '+';
+    icon.textContent = isHidden ? '−' : '▼';
   }
 </script>
   
