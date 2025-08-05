@@ -137,15 +137,17 @@
 </section>
 
 <script>
-  document.querySelectorAll('.toggle-faq').forEach(button => {
-    button.addEventListener('click', () => {
-      const content = button.nextElementSibling;
-      const icon = button.querySelector('.faq-icon');
-      const isHidden = content.classList.contains('hidden');
-      content.classList.toggle('hidden');
-      icon.textContent = isHidden ? '−' : '+';
-    });
-  });
+  function toggleFAQ(index) {
+    const answers = document.querySelectorAll('.faq-answer');
+    const icons = document.querySelectorAll('.faq-icon');
+
+    const answer = answers[index];
+    const icon = icons[index];
+
+    const isHidden = answer.classList.contains('hidden');
+    answer.classList.toggle('hidden');
+    icon.textContent = isHidden ? '−' : '+';
+  }
 </script>
   
   </div>
